@@ -6,7 +6,7 @@ export default function Welcome() {
 
     return (
         <div className="container fade-in">
-            <h1>👋 Bienvenido(a)</h1>
+            <h1>Bienvenido(a)</h1>
             <p>
                 Antes de ingresar a la habitación, revisa las medidas de seguridad
                 necesarias.

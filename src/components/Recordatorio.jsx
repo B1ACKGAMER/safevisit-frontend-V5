@@ -28,13 +28,22 @@ export default function Recordatorio() {
 
     // 🔗 Crear evento en Microsoft Calendar (Outlook)
     const crearMicrosoftCalendar = () => {
+        const formatoOutlook = (date) => {
+            // Outlook requiere formato: YYYY-MM-DDTHH:MM
+            return date.toISOString().slice(0, 16);
+        };
+
         const url = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(
             titulo
         )}&body=${encodeURIComponent(
             descripcion
-        )}&startdt=${fechaInicio.toISOString()}&enddt=${fechaFin.toISOString()}`;
+        )}&startdt=${formatoOutlook(fechaInicio)}&enddt=${formatoOutlook(
+            fechaFin
+        )}&allday=false&path=/calendar/action/compose`;
+
         window.open(url, "_blank");
     };
+
 
     return (
         <div className="container fade-in">
@@ -47,12 +56,21 @@ export default function Recordatorio() {
             </div>
 
             <button
-                onClick={() => navigate("/final")}
+                onClick={() => navigate("/Precauciones")}
                 className="btn-volver"
                 style={{ marginTop: "20px" }}
             >
                 Volver
             </button>
+
+            <button
+                onClick={() => navigate("/final")}
+                className="btn-siguiente"
+                style={{ marginTop: "20px", marginLeft: "10px" }}
+            >
+                Siguiente
+            </button>
+
         </div>
     );
 }

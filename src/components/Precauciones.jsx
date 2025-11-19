@@ -6,10 +6,35 @@ export default function Precauciones() {
     const location = useLocation();
     const { tipo } = location.state || {};
 
-    // Lista con descripción y elementos según el tipo
+    // Diccionario de íconos por nombre del elemento
+    const iconos = {
+        "Guantes desechables": "🧤",
+        "Bata de manga larga": "🥼",
+        "Lavado de manos antes y después del contacto": "🧼",
+        "Lavado de manos con agua y jabón": "🧼",
+        "Desechar los elementos en contenedor biológico": "🗑️",
+        "Mascarilla quirúrgica": "😷",
+        "Protección ocular o careta": "🕶️",
+        "Respirador N95 o superior": "😮‍💨",
+        "Habitación con presión negativa": "🏥",
+        "Puerta cerrada durante la atención": "🚪",
+        "Ventilación constante": "💨",
+        "Ventilar el área adecuadamente": "💨",
+        "Mantener distancia mínima de 1 metro": "📏",
+        "Mosquitero o red protectora": "🪟",
+        "Uso de repelente": "🦟",
+        "Control ambiental de insectos": "🌿",
+        "Eliminar aguas estancadas": "🚫💧",
+        "Mascarilla quirúrgica para visitantes": "😷",
+        "Higiene de manos estricta": "🧴",
+        "Evitar visitas con síntomas respiratorios": "🚫🤧",
+        "Habitación limpia y bien ventilada": "🧹"
+    };
+
+    // Base de datos de precauciones
     const detalles = {
         "Precaución de contacto": {
-            color: "red",
+            color: "Black",
             descripcion:
                 "Evita el contacto directo con el paciente. Usa guantes y bata protectora.",
             elementos: [
@@ -20,7 +45,7 @@ export default function Precauciones() {
             ]
         },
         "Precaución por gotas": {
-            color: "yellow",
+            color: "Black",
             descripcion:
                 "Evita la exposición a secreciones respiratorias. Usa mascarilla quirúrgica y protección ocular.",
             elementos: [
@@ -31,7 +56,7 @@ export default function Precauciones() {
             ]
         },
         "Precauciones aéreas": {
-            color: "green",
+            color: "Black",
             descripcion:
                 "Evita el contacto con partículas suspendidas. Usa respirador N95 y evita corrientes de aire.",
             elementos: [
@@ -42,7 +67,7 @@ export default function Precauciones() {
             ]
         },
         "Precaución de aislamiento por vectores": {
-            color: "gray",
+            color: "Black",
             descripcion:
                 "Evita la exposición a insectos transmisores. Usa repelente y mantén mosquiteros cerrados.",
             elementos: [
@@ -53,7 +78,7 @@ export default function Precauciones() {
             ]
         },
         "Precaución para pacientes inmunosuprimidos": {
-            color: "blue",
+            color: "Black",
             descripcion:
                 "Minimiza el riesgo de infecciones externas. Usa mascarilla, higiene estricta y evita multitudes.",
             elementos: [
@@ -64,7 +89,7 @@ export default function Precauciones() {
             ]
         },
         "Precaución por contacto Clostridium difficile": {
-            color: "purple",
+            color: "Black",
             descripcion:
                 "Lava tus manos con agua y jabón (no alcohol). Usa guantes y bata de manga larga.",
             elementos: [
@@ -97,8 +122,10 @@ export default function Precauciones() {
 
             <div className="icons">
                 {data.elementos.map((el, index) => (
-                    <div key={index}>
-                        <span style={{ fontSize: "2rem" }}>🩺</span>
+                    <div key={index} className="icon-item">
+                        <span style={{ fontSize: "2rem" }}>
+                            {iconos[el] || "🩺"}
+                        </span>
                         <p>{el}</p>
                     </div>
                 ))}
@@ -119,4 +146,3 @@ export default function Precauciones() {
         </div>
     );
 }
-

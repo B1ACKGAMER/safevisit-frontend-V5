@@ -20,7 +20,7 @@ export default function Aislamiento() {
 
     return (
         <div className="container fade-in">
-            <h1>🧤 Tipos de Precauciones</h1>
+            <h1>Tipos de Precauciones</h1>
             <div className="precauciones-lista">
                 {precauciones.map((item, index) => (
                     <div
