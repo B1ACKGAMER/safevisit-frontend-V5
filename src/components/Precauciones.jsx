@@ -35,10 +35,10 @@ export default function Precauciones() {
 
     const imagenes = {
         "Precaución de contacto": "/img/precaucion_de_contacto.png",
-        "Precaución por gotas": "/img/precaucion_por_gotas.png",
-        "Precauciones aéreas": "/img/precauciones_aereas.png",
-        "Precaución de aislamiento por vectores": "/img/precaucion_de_aislamiento_por_vectores.png",
-        "Precaución para pacientes inmunosuprimidos": "/img/precaucion_para_pacientes_inmunosuprimidos.png",
+        "Precaución por gotas": "/img/Precaucion_por_gotas.png",
+        "Precauciones aéreas": "/img/Precauciones_aereas.png",
+        "Precaución de aislamiento por vectores": "/img/Precaucion_de_aislamiento_por_vectores.png",
+        "Precaución para pacientes inmunosuprimidos": "/img/Precaucion_para_pacientes_inmunosuprimidos.png",
         "Precaución por contacto Clostridium difficile": "/img/Precaucion_por_contacto_Clostridium_difficile.png"
     };
 
